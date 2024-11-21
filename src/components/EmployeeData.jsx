@@ -73,9 +73,7 @@ const EmployeePagination = () => {
         </tbody>
       </table>
       <div className="pagination-controls">
-        <button onClick={handlePrevious} disabled={currentPage === 1}>
-          Previous
-        </button>
+        <button onClick={handlePrevious}>Previous</button>
         <span className="pagination-info">
           Page {currentPage} of {totalPages}
         </span>
