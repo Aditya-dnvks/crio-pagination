@@ -25,23 +25,20 @@ const EmployeePagination = () => {
     fetchData();
   }, []);
 
-  // Determine the data to display on the current page
   const startIndex = (currentPage - 1) * rowsPerPage;
   const paginatedData = employees.slice(startIndex, startIndex + rowsPerPage);
 
-  // Calculate total pages
   const totalPages = Math.ceil(employees.length / rowsPerPage);
-
-  // Handlers for buttons
-  const handlePrevious = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
 
   const handleNext = () => {
     if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
+      setCurrentPage((prev) => prev + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prev) => prev - 1);
     }
   };
 
